@@ -34,3 +34,9 @@
 - Audios.
 - Imágenes.
 - Notas proporcionadas por el cliente.
+
+---
+
+## Enlace al cuaderno
+
+[Digital Order Management Proposal for Sabor Kiosco - Gemini Notebook](https://notebook.google.com/notebook/4e32de88-a69a-4fc9-99f2-4b58dcd550ed)
