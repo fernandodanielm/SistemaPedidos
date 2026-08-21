@@ -20,6 +20,9 @@ class Pedido {
   +numero: String
   +estado: EstadoPedido
   +prioridad: Integer
+  +codigoRetiro: String
+  +fechaLimiteEntrega: DateTime
+  +versionEstado: Integer
   +total(): Decimal
   +modificar()
   +cancelar()
@@ -52,6 +55,31 @@ class Comanda {
   +enviadaEn: DateTime
   +estado: EstadoComanda
   +enviarACocina()
+}
+
+class Cocina {
+  +id: UUID
+  +nombre: String
+  +recibirComanda()
+}
+
+class IdentificadorRetiro {
+  +codigo: String
+  +generar()
+  +validar()
+}
+
+class Operador {
+  +id: UUID
+  +nombre: String
+  +rol: String
+}
+
+class RegistroAuditoria {
+  +id: UUID
+  +accion: String
+  +fecha: DateTime
+  +detalle: String
 }
 
 class Pago {
@@ -90,7 +118,11 @@ ItemPedido "*" --> "1" Producto
 ItemPedido "*" *-- "0..*" Personalizacion
 Combo --|> Producto
 Pedido "1" *-- "1" Comanda
+Comanda "1" --> "1" Cocina
 Pedido "1" o-- "0..1" Pago
+Pedido "1" *-- "1" IdentificadorRetiro
+Pedido "1" o-- "0..*" RegistroAuditoria
+Operador "1" --> "0..*" RegistroAuditoria
 Pedido --> EstadoPedido
 Comanda --> EstadoComanda
 Pago --> MetodoPago
@@ -102,6 +134,19 @@ note bottom of Pedido
   RF1-RF7: toma, personalizacion,
   seguimiento, modificacion,
   cancelacion, retiro y prioridad
+  RNF4: estado consistente y versionado
+end note
+note right of Cocina
+  RF2: envío automático
+  de comandas
+end note
+note bottom of IdentificadorRetiro
+  RF6: identifica el pedido
+  para el retiro
+end note
+note right of RegistroAuditoria
+  RNF5: seguridad y
+  trazabilidad básica
 end note
 note right of Pago
   RF8: registro de pago
