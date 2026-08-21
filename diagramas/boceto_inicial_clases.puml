@@ -1,0 +1,109 @@
+@startuml boceto_inicial_clases
+title Sistema de pedidos - Boceto inicial de clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+class Local {
+  +id: UUID
+  +nombre: String
+  +activo: Boolean
+}
+
+class Cliente {
+  +id: UUID
+  +nombre: String
+  +contacto: String
+}
+
+class Pedido {
+  +id: UUID
+  +numero: String
+  +estado: EstadoPedido
+  +prioridad: Integer
+  +total(): Decimal
+  +modificar()
+  +cancelar()
+}
+
+class ItemPedido {
+  +cantidad: Integer
+  +precioUnitario: Decimal
+  +subtotal(): Decimal
+}
+
+abstract class Producto {
+  +id: UUID
+  +nombre: String
+  +precio: Decimal
+}
+
+class Combo {
+  +items: List<Producto>
+}
+
+class Personalizacion {
+  +nombre: String
+  +valor: String
+  +adicional: Decimal
+}
+
+class Comanda {
+  +id: UUID
+  +enviadaEn: DateTime
+  +estado: EstadoComanda
+  +enviarACocina()
+}
+
+class Pago {
+  +id: UUID
+  +monto: Decimal
+  +registradoEn: DateTime
+  +metodo: MetodoPago
+  +registrar()
+}
+
+enum EstadoPedido {
+  RECIBIDO
+  EN_PREPARACION
+  LISTO_PARA_RETIRO
+  ENTREGADO
+  CANCELADO
+}
+
+enum EstadoComanda {
+  PENDIENTE
+  ENVIADA
+  EN_PREPARACION
+  LISTA
+}
+
+enum MetodoPago {
+  EFECTIVO
+  TARJETA
+  TRANSFERENCIA
+}
+
+Local "1" o-- "0..*" Pedido
+Cliente "1" -- "0..*" Pedido
+Pedido "1" *-- "1..*" ItemPedido
+ItemPedido "*" --> "1" Producto
+ItemPedido "*" *-- "0..*" Personalizacion
+Combo --|> Producto
+Pedido "1" *-- "1" Comanda
+Pedido "1" o-- "0..1" Pago
+Pedido --> EstadoPedido
+Comanda --> EstadoComanda
+Pago --> MetodoPago
+note right of Local
+  RNF1: permite incorporar
+  nuevos locales
+end note
+note bottom of Pedido
+  RF1-RF7: toma, personalizacion,
+  seguimiento, modificacion,
+  cancelacion, retiro y prioridad
+end note
+note right of Pago
+  RF8: registro de pago
+end note
+@enduml

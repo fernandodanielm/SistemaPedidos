@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="760" viewBox="0 0 1040 760">
+  <rect width="1040" height="760" fill="#fff"/>
+  <style>text{font-family:Arial,sans-serif;fill:#1e1e1e;font-size:16px} .box{stroke:#1e1e1e;stroke-width:2;rx:8} .line{stroke:#1e1e1e;stroke-width:2;marker-end:url(#arrow)}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#1e1e1e"/></marker></defs>
+  <text x="40" y="28" font-size="24" font-weight="bold">Sistema de pedidos - Boceto inicial de clases</text>
+  <g class="box" fill="#dbeafe"><rect x="40" y="60" width="220" height="120"/><text x="58" y="88" font-weight="bold">Local</text><text x="58" y="113">id: UUID</text><text x="58" y="138">nombre: String</text><text x="58" y="163">activo: Boolean</text></g>
+  <g class="box" fill="#dcfce7"><rect x="340" y="60" width="220" height="120"/><text x="358" y="88" font-weight="bold">Cliente</text><text x="358" y="113">id: UUID</text><text x="358" y="138">nombre: String</text><text x="358" y="163">contacto: String</text></g>
+  <g class="box" fill="#fef3c7"><rect x="190" y="260" width="300" height="170"/><text x="208" y="288" font-weight="bold">Pedido</text><text x="208" y="313">id: UUID</text><text x="208" y="338">numero: String</text><text x="208" y="363">estado: EstadoPedido</text><text x="208" y="388">prioridad: Integer</text><text x="208" y="413">total(), modificar(), cancelar()</text></g>
+  <g class="box" fill="#fce7f3"><rect x="40" y="520" width="220" height="130"/><text x="58" y="548" font-weight="bold">ItemPedido</text><text x="58" y="573">cantidad: Integer</text><text x="58" y="598">precioUnitario: Decimal</text><text x="58" y="623">subtotal(): Decimal</text></g>
+  <g class="box" fill="#ede9fe"><rect x="340" y="520" width="220" height="130"/><text x="358" y="548" font-weight="bold">Producto / Combo</text><text x="358" y="573">id: UUID</text><text x="358" y="598">nombre: String</text><text x="358" y="623">precio: Decimal</text></g>
+  <g class="box" fill="#ffedd5"><rect x="680" y="260" width="220" height="130"/><text x="698" y="288" font-weight="bold">Comanda</text><text x="698" y="313">id: UUID</text><text x="698" y="338">estado: EstadoComanda</text><text x="698" y="363">enviarACocina()</text></g>
+  <g class="box" fill="#ccfbf1"><rect x="680" y="520" width="220" height="130"/><text x="698" y="548" font-weight="bold">Pago</text><text x="698" y="573">id: UUID</text><text x="698" y="598">monto: Decimal</text><text x="698" y="623">metodo: MetodoPago</text></g>
+  <path class="line" d="M150 180 L330 260"/><path class="line" d="M450 180 L340 260"/><path class="line" d="M280 430 L150 520"/><path class="line" d="M400 430 L450 520"/><path class="line" d="M490 345 L680 325"/><path class="line" d="M490 390 L680 520"/>
+</svg>
