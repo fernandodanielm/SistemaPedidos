@@ -20,11 +20,12 @@ A partir de las fuentes analizadas, la necesidad de **Sabor Kiosco** se resume e
 - **Requerimientos funcionales para el MVP:** funcionalidades que debe incluir el sistema.
 - **Exclusiones clave del MVP:** funcionalidades que quedan fuera del alcance de esta fase para garantizar una entrega rápida a fines de julio de 2025.
 
+
 ### Integrantes del proyecto
 
-| Integrante | Usuario de GitHub |
-|---|---|
-| Lautaro Chumacero | [@chumacerolautaro6-droid](https://github.com/chumacerolautaro6-droid) |
-| Santiago Medel | [@santimarM](https://github.com/santimarM) |
-| Sebastian Benitez | [@Sebas-Benitez](https://github.com/Sebas-Benitez) |
-| Fernando Molina | [@fernandodanielm](https://github.com/fernandodanielm) |
+| Integrante | Usuario de GitHub | Rol |
+|---|---|---|
+| Lautaro Chumacero | [@chumacerolautaro6-droid](https://github.com/chumacerolautaro6-droid) | Analista de requerimientos |
+| Santiago Medel | [@santimarM](https://github.com/santimarM) | Modelador de casos de uso |
+| Sebastian Benitez | [@Sebas-Benitez](https://github.com/Sebas-Benitez) | Diseñador de clases iniciales |
+| Fernando Molina | [@fernandodanielm](https://github.com/fernandodanielm) | Coordinador/Documentador |
