@@ -20,6 +20,11 @@ A partir de las fuentes analizadas, la necesidad de **Sabor Kiosco** se resume e
 - **Requerimientos funcionales para el MVP:** funcionalidades que debe incluir el sistema.
 - **Exclusiones clave del MVP:** funcionalidades que quedan fuera del alcance de esta fase para garantizar una entrega rápida a fines de julio de 2025.
 
+### Descripción del paradigma orientado a objetos
+
+El paradigma orientado a objetos organiza el sistema mediante objetos que representan entidades del dominio y combinan sus datos con las operaciones que pueden realizar. En este proyecto, conceptos como clientes, pedidos, productos y pagos pueden modelarse como clases con atributos y métodos propios.
+
+Este enfoque permite mantener cada responsabilidad encapsulada, reutilizar comportamientos mediante la herencia cuando sea necesario y aplicar polimorfismo para que distintos objetos respondan de forma particular a una misma operación. De esta manera, el sistema de pedidos puede ser más modular, fácil de mantener y flexible para incorporar nuevas funcionalidades.
 
 ### Integrantes del proyecto
 
