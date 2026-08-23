@@ -28,3 +28,12 @@ A partir de las fuentes analizadas, la necesidad de **Sabor Kiosco** se resume e
 | Santiago Medel | [@santimarM](https://github.com/santimarM) | Modelador de casos de uso |
 | Sebastian Benitez | [@Sebas-Benitez](https://github.com/Sebas-Benitez) | Diseñador de clases iniciales |
 | Fernando Molina | [@fernandodanielm](https://github.com/fernandodanielm) | Coordinador/Documentador |
+
+### Datos académicos
+
+La matrícula, carrera y materia de cada integrante deben completarse con los datos oficiales de la comisión antes de entregar.
+
+### Diagramas y Diseños
+
+- [Anexos e introducción](anexos/anexos.md)
+- [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw)
