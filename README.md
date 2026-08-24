@@ -151,7 +151,7 @@ La matrícula, carrera y materia de cada integrante deben completarse con los da
 ## 16. Diagramas y documentación relacionada
 - [Anexos e introducción](anexos/introduccion.md)
 - [Casos de uso](modelador%20de%20caso%20de%20uso/casos_de_uso.md)
-- [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto-inicial.excalidraw)
+- [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto-inicial.png)
 
 ## 17. Conclusión
 El MVP de Sabor Kiosco está centrado en resolver la operación esencial del negocio: tomar pedidos, coordinar cocina, controlar estados, atender modificaciones y entregas, y mantener trazabilidad de pagos y cancelaciones. Con este alcance se logra una solución útil, rápida de implementar y preparada para crecer en futuras etapas.
