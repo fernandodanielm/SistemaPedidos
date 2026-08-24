@@ -3,11 +3,14 @@
 ## Tipo de proyecto
 Sistema de pedidos para gestión operativa del local.
 
-## 1. Introducción
-El presente proyecto tiene como objetivo digitalizar la gestión de pedidos de Sabor Kiosco para mejorar la operación del mostrador, coordinar la cocina y registrar de forma ordenada los estados, pagos y entregas de cada pedido. La solución propuesta está enfocada en un MVP funcional, con rapidez de implementación y una base sólida para futuras ampliaciones.
+## 1. Resumen ejecutivo
+El presente proyecto propone un sistema de gestión de pedidos para Sabor Kiosco, orientado a automatizar y ordenar la operación del negocio desde la toma del pedido hasta la entrega final al cliente. La solución se centra en un MVP funcional, con enfoque en rapidez de implementación, usabilidad operativa y trazabilidad de procesos. El objetivo principal es reducir errores, mejorar la coordinación entre mostrador y cocina y facilitar el control del estado de cada pedido.
 
-## 2. Objetivo del sistema
-Permitir que el local pueda:
+## 2. Introducción
+La gestión del negocio requiere un flujo más eficiente y consistente para atender pedidos con personalizaciones, combos y seguimiento del estado. Actualmente, la operación puede verse afectada por errores en la carga de información, falta de sincronización entre sectores y dificultad para controlar modificaciones o cancelaciones. Con el sistema propuesto, se busca digitalizar esta operación para mejorar la experiencia del cliente y la productividad interna del local.
+
+## 3. Objetivo del sistema
+El sistema debe permitir al local:
 - tomar pedidos con personalizaciones y combos,
 - enviar automáticamente la información a cocina,
 - visualizar el estado del pedido,
@@ -17,8 +20,8 @@ Permitir que el local pueda:
 - registrar el pago,
 - mantener trazabilidad básica de las operaciones.
 
-## 3. Alcance del MVP
-### Incluye
+## 4. Alcance del MVP
+### Funcionalidades incluidas
 - RF1: toma de pedidos con personalizaciones y combos.
 - RF2: envío automático de comandas a cocina.
 - RF3: seguimiento del estado del pedido.
@@ -28,7 +31,7 @@ Permitir que el local pueda:
 - RF7: priorización manual.
 - RF8: registro de pago.
 
-### Queda fuera del MVP
+### Funcionalidades excluidas
 - integración con delivery externo,
 - gestión avanzada de clientes,
 - administración centralizada de múltiples locales,
@@ -36,8 +39,8 @@ Permitir que el local pueda:
 - análisis avanzado de ventas,
 - sistema de fidelización o promociones complejas.
 
-## 4. Problema de negocio
-El negocio necesita un sistema que reduzca errores en atención, mejore la coordinación entre mostrador y cocina y permita controlar cada pedido desde su creación hasta su entrega. El problema real incluye:
+## 5. Problema de negocio
+El negocio requiere un sistema que reduzca errores en atención, mejore la coordinación entre mostrador y cocina y permita controlar cada pedido desde su creación hasta su entrega. El problema real incluye:
 - pedidos mal registrados,
 - falta de visibilidad del estado,
 - dificultades para modificar órdenes,
@@ -45,7 +48,7 @@ El negocio necesita un sistema que reduzca errores en atención, mejore la coord
 - errores en identificación al retiro,
 - falta de trazabilidad en cancelaciones y pagos.
 
-## 5. Requisitos funcionales
+## 6. Requisitos funcionales
 - RF1: tomar pedidos con personalizaciones y combos.
 - RF2: enviar automáticamente la comanda a cocina.
 - RF3: visualizar y seguir el estado del pedido.
@@ -55,26 +58,26 @@ El negocio necesita un sistema que reduzca errores en atención, mejore la coord
 - RF7: priorizar manualmente pedidos urgentes.
 - RF8: registrar el pago asociado al pedido.
 
-## 6. Requisitos no funcionales
+## 7. Requisitos no funcionales
 - RNF1: el sistema debe permitir incorporar nuevos locales en el futuro.
 - RNF2: debe ser simple de operar y fácil de usar.
 - RNF3: debe cumplirse con el plazo de entrega.
 - RNF4: debe garantizar integridad y consistencia de los datos.
 - RNF5: debe incluir seguridad y trazabilidad básica.
 
-## 7. Actores del sistema
+## 8. Actores del sistema
 - Usuario de mostrador: registra, modifica, entrega y cobra pedidos.
 - Cocina: recibe la comanda y actualiza el avance de preparación.
 - Encargado: autoriza situaciones excepcionales, especialmente cancelaciones con criterios especiales.
 
-## 8. Casos de uso principales
+## 9. Casos de uso principales
 1. CU1 - Tomar Pedido
 2. CU2 - Modificar Pedido
 3. CU3 - Cambiar Estado del Pedido
 4. CU4 - Cancelar Pedido
 5. CU5 - Entregar Pedido
 
-## 9. Regla de negocio central
+## 10. Regla de negocio central
 El ciclo de vida del pedido debe seguir una secuencia válida:
 - Recibido → En preparación → Listo → Entregado
 - Recibido → Cancelado
@@ -82,7 +85,7 @@ El ciclo de vida del pedido debe seguir una secuencia válida:
 - Listo → Cancelado con autorización del encargado
 - Entregado → no modificable ni cancelable
 
-## 10. Modelo de dominio
+## 11. Modelo de dominio
 Las entidades principales del sistema son:
 - Local
 - Usuario
@@ -97,14 +100,14 @@ Las entidades principales del sistema son:
 - RegistroAuditoria
 - EstadoPedido
 
-## 11. Arquitectura sugerida
+## 12. Arquitectura sugerida
 Se recomienda una arquitectura orientada a objetos con separación de responsabilidades:
-- capa de dominio: entidades y reglas del negocio,
-- capa de aplicación: lógica de casos de uso,
-- capa de infraestructura: persistencia y auditoría,
-- capa de presentación: interfaz para mostrador y cocina.
+- Capa de dominio: entidades y reglas del negocio.
+- Capa de aplicación: lógica de casos de uso.
+- Capa de infraestructura: persistencia y auditoría.
+- Capa de presentación: interfaz para mostrador y cocina.
 
-## 12. Clases principales
+## 13. Clases principales
 - Local: representa cada punto de venta.
 - Usuario: opera el sistema.
 - Pedido: encapsula el detalle del pedido y su estado.
@@ -116,7 +119,7 @@ Se recomienda una arquitectura orientada a objetos con separación de responsabi
 - Pago: registra el cobro asociado.
 - RegistroAuditoria: deja evidencia de cambios relevantes.
 
-## 13. Criterios de aceptación del MVP
+## 14. Criterios de aceptación del MVP
 Se considera aceptado cuando:
 - el pedido se registra correctamente,
 - la cocina recibe la comanda sin intervención manual,
@@ -127,7 +130,7 @@ Se considera aceptado cuando:
 - el pago queda asociado al pedido,
 - la operación es clara y rápida para el usuario.
 
-## 14. Plan de trabajo sugerido
+## 15. Plan de trabajo sugerido
 1. Validar los casos de uso con el equipo.
 2. Definir el diagrama de clases final.
 3. Especificar las entidades y relaciones principales.
@@ -137,7 +140,7 @@ Se considera aceptado cuando:
 7. Formalizar la operación del mostrador y cocina.
 8. Redactar la versión final para la entrega.
 
-## 15. Integrantes del proyecto
+## 16. Integrantes del proyecto
 | Integrante | Matrícula | Usuario de GitHub | Rol |
 |---|---:|---|---|
 | Lautaro Chumacero |  | [@chumacerolautaro6-droid](https://github.com/chumacerolautaro6-droid) | Analista de requerimientos |
@@ -148,10 +151,20 @@ Se considera aceptado cuando:
 ### Datos académicos
 La matrícula, carrera y materia de cada integrante deben completarse con los datos oficiales de la comisión antes de la entrega final.
 
-## 16. Diagramas y documentación relacionada
+## 17. Diagramas y documentación relacionada
 - [Anexos e introducción](anexos/introduccion.md)
 - [Casos de uso](modelador%20de%20caso%20de%20uso/casos_de_uso.md)
 - [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto-inicial.png)
 
-## 17. Conclusión
-El MVP de Sabor Kiosco está centrado en resolver la operación esencial del negocio: tomar pedidos, coordinar cocina, controlar estados, atender modificaciones y entregas, y mantener trazabilidad de pagos y cancelaciones. Con este alcance se logra una solución útil, rápida de implementar y preparada para crecer en futuras etapas.
+## 18. Conclusión
+El MVP propuesto para Sabor Kiosco responde a una necesidad concreta del negocio: mejorar la gestión de pedidos, reducir errores operativos y proporcionar una base sólida para la expansión futura del sistema. El enfoque del proyecto apunta a una solución simple, funcional, trazable y fácilmente adaptable a nuevos locales o nuevas funcionalidades.
+
+## 19. Bibliografía y fuentes del proyecto
+- Documentación de requerimientos del cliente.
+- Evidencias operativas del negocio.
+- Análisis orientado a objetos del problema.
+- Boceto inicial de clases del sistema.
+- Casos de uso identificados para la operación del local.
+
+## 20. Observaciones finales
+La propuesta presentada constituye una base válida para la etapa de análisis y diseño inicial del sistema. Su principal fortaleza radica en abordar los procesos esenciales del negocio con un nivel de complejidad adecuado para un MVP, priorizando funcionalidad, claridad operativa y posibilidad de evolución técnica posterior.
