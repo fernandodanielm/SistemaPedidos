@@ -154,7 +154,7 @@ La matrícula, carrera y materia de cada integrante deben completarse con los da
 ## 17. Diagramas y documentación relacionada
 - [Anexos e introducción](anexos/introduccion.md)
 - [Casos de uso](modelador%20de%20caso%20de%20uso/casos_de_uso.md)
-- [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto-inicial.png)
+- [Boceto inicial de clases](diagramas/01-diagrama-clases/01-boceto_inicial_clases.png)
 
 ## 18. Conclusión
 El MVP propuesto para Sabor Kiosco responde a una necesidad concreta del negocio: mejorar la gestión de pedidos, reducir errores operativos y proporcionar una base sólida para la expansión futura del sistema. El enfoque del proyecto apunta a una solución simple, funcional, trazable y fácilmente adaptable a nuevos locales o nuevas funcionalidades.
