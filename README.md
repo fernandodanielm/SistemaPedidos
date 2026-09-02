@@ -149,7 +149,11 @@ Se considera aceptado cuando:
 | Fernando Molina | 153090 | [@fernandodanielm](https://github.com/fernandodanielm) | Coordinador/Documentador |
 
 ### Datos académicos
-La matrícula, carrera y materia de cada integrante deben completarse con los datos oficiales de la comisión antes de la entrega final.
+- Carrera: Tecnicatura en programación de sistemas.
+- Materia: Diseño orientado a objetos.
+- Profesor: Matias Velasquez.
+
+La matrícula de cada integrante debe completarse con los datos oficiales de la comisión antes de la entrega final.
 
 ## 17. Diagramas y documentación relacionada
 - [Anexos e introducción](anexos/introduccion.md)
