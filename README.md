@@ -143,7 +143,7 @@ Se considera aceptado cuando:
 ## 16. Integrantes del proyecto
 | Integrante | Matrícula | Usuario de GitHub | Rol |
 |---|---:|---|---|
-| Lautaro Chumacero |  | [@chumacerolautaro6-droid](https://github.com/chumacerolautaro6-droid) | Analista de requerimientos |
+| Lautaro Chumacero | 161959 | [@chumacerolautaro6-droid](https://github.com/chumacerolautaro6-droid) | Analista de requerimientos |
 | Santiago Medel | 154076 | [@santimarM](https://github.com/santimarM) | Modelador de casos de uso |
 | Sebastian Benitez |  | [@Sebas-Benitez](https://github.com/Sebas-Benitez) | Diseñador de clases iniciales |
 | Fernando Molina | 153090 | [@fernandodanielm](https://github.com/fernandodanielm) | Coordinador/Documentador |
