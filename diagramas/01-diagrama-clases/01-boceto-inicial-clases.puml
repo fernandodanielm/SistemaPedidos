@@ -1,0 +1,154 @@
+@startuml boceto_inicial_clases
+title Sistema de pedidos - Boceto inicial de clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+class Local {
+  +id: UUID
+  +nombre: String
+  +activo: Boolean
+}
+
+class Cliente {
+  +id: UUID
+  +nombre: String
+  +contacto: String
+}
+
+class Pedido {
+  +id: UUID
+  +numero: String
+  +estado: EstadoPedido
+  +prioridad: Integer
+  +codigoRetiro: String
+  +fechaLimiteEntrega: DateTime
+  +versionEstado: Integer
+  +total(): Decimal
+  +modificar()
+  +cancelar()
+}
+
+class ItemPedido {
+  +cantidad: Integer
+  +precioUnitario: Decimal
+  +subtotal(): Decimal
+}
+
+abstract class Producto {
+  +id: UUID
+  +nombre: String
+  +precio: Decimal
+}
+
+class Combo {
+  +items: List<Producto>
+}
+
+class Personalizacion {
+  +nombre: String
+  +valor: String
+  +adicional: Decimal
+}
+
+class Comanda {
+  +id: UUID
+  +enviadaEn: DateTime
+  +estado: EstadoComanda
+  +enviarACocina()
+}
+
+class Cocina {
+  +id: UUID
+  +nombre: String
+  +recibirComanda()
+}
+
+class IdentificadorRetiro {
+  +codigo: String
+  +generar()
+  +validar()
+}
+
+class Operador {
+  +id: UUID
+  +nombre: String
+  +rol: String
+}
+
+class RegistroAuditoria {
+  +id: UUID
+  +accion: String
+  +fecha: DateTime
+  +detalle: String
+}
+
+class Pago {
+  +id: UUID
+  +monto: Decimal
+  +registradoEn: DateTime
+  +metodo: MetodoPago
+  +registrar()
+}
+
+enum EstadoPedido {
+  RECIBIDO
+  EN_PREPARACION
+  LISTO_PARA_RETIRO
+  ENTREGADO
+  CANCELADO
+}
+
+enum EstadoComanda {
+  PENDIENTE
+  ENVIADA
+  EN_PREPARACION
+  LISTA
+}
+
+enum MetodoPago {
+  EFECTIVO
+  TARJETA
+  TRANSFERENCIA
+}
+
+Local "1" o-- "0..*" Pedido
+Cliente "1" -- "0..*" Pedido
+Pedido "1" *-- "1..*" ItemPedido
+ItemPedido "*" --> "1" Producto
+ItemPedido "*" *-- "0..*" Personalizacion
+Combo --|> Producto
+Pedido "1" *-- "1" Comanda
+Comanda "1" --> "1" Cocina
+Pedido "1" o-- "0..1" Pago
+Pedido "1" *-- "1" IdentificadorRetiro
+Pedido "1" o-- "0..*" RegistroAuditoria
+Operador "1" --> "0..*" RegistroAuditoria
+Pedido --> EstadoPedido
+Comanda --> EstadoComanda
+Pago --> MetodoPago
+note right of Local
+  RNF1: permite incorporar
+  nuevos locales
+end note
+note bottom of Pedido
+  RF1-RF7: toma, personalizacion,
+  seguimiento, modificacion,
+  cancelacion, retiro y prioridad
+  RNF4: estado consistente y versionado
+end note
+note right of Cocina
+  RF2: envío automático
+  de comandas
+end note
+note bottom of IdentificadorRetiro
+  RF6: identifica el pedido
+  para el retiro
+end note
+note right of RegistroAuditoria
+  RNF5: seguridad y
+  trazabilidad básica
+end note
+note right of Pago
+  RF8: registro de pago
+end note
+@enduml
