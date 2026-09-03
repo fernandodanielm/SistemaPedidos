@@ -151,6 +151,7 @@ Se considera aceptado cuando:
 ### Datos académicos
 - Carrera: Tecnicatura en programación de sistemas.
 - Materia: Diseño orientado a objetos.
+- Comisión: 2.
 - Profesor: Matias Velasquez.
 
 La matrícula de cada integrante debe completarse con los datos oficiales de la comisión antes de la entrega final.
